@@ -7,9 +7,12 @@
         </h2>
         <hr>
         <ul class="list-group">
-            <li class="list-group-item">Buscar país</li>
-            <li class="list-group-item">Por Región</li>
-            <li class="list-group-item">Por Capital</li>
+            <!-- [routerLinkActiveOptions]="{exact: true}" Esto se utiliza por que el routerLink="", 
+                si tuviera algo adentro, como pais, no se utilizaria -->
+            
+            <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="list-group-item">Buscar país</li>
+            <li routerLink="region" routerLinkActive="active" class="list-group-item">Por Región</li>
+            <li routerLink="capital" routerLinkActive="active" class="list-group-item">Por Capital</li>
         </ul>
     </div>
 

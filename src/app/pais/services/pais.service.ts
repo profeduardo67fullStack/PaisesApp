@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Country } from '../interfaces/pais.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class PaisService {
 
   /**Creamos un método para las busquedas */
 
-  buscarPais(termino: string): Observable<any>{//Método que recibe el término y regresa un Observable
+  buscarPais(termino: string): Observable<Country[]>{//Método que recibe el término y regresa un Observable
 
     /**Contruimos la url de búsqueda */
     const url = `${this.apiURL}/name/${termino}`;
@@ -27,7 +28,7 @@ export class PaisService {
     //this.http.get(url).subscribe();//El subscribe se utiliza para hacer que esto se ejecute
 
     //Si no se quiere retornar la información dentro del servicio, sino al que sea que mando a llamar buscar país
-    return this.http.get(url);
+    return this.http.get<Country[]>(url);
 
   }
 

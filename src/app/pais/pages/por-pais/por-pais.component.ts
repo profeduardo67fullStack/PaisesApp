@@ -36,7 +36,7 @@ export class PorPaisComponent{
     
     }, (err) => {
       this.hayError = true;
-      //this.paises = [];//Si dá error pinto un arreglo con paises vacios
+      this.paises = [];//Si dá error pinto un arreglo con paises vacios
     });
   }
   

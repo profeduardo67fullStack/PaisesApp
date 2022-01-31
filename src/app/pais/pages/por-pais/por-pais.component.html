@@ -27,11 +27,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Bandera</td>
-                    <td>Nombre</td>
-                    <td>12356465</td>
+                <tr *ngFor="let pais of paises; index as i">
+                    <td>{{ i + 1 }}</td>
+                    <td>
+                        <img class="small-flag" [src]="pais.flags.svg" alt="Imagen"><!--Recuerde que se pone [src], para que extraiga el 
+                        valor de la propieda y no que iguale a pais.flag-->
+                    </td>
+                    <td>{{ pais.name.common }}</td>
+                    <td>{{ pais.population | number}}</td>
                     <td>
                         <a href="#">Ver País.....</a>
                     </td>

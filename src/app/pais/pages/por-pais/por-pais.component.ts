@@ -31,14 +31,13 @@ export class PorPaisComponent{
     //hay que recordar que para que un observable se dispare, hay que tener almenos un subscribe
     this.paisService.buscarPais(this.termino).subscribe(paises => {//En este caso del observable, esta seria la parte del next
       console.log(paises);//Por ahorita mandamos a pintar el resultado de la búsqueda
-    
+      this.paises = paises;
     
     
     }, (err) => {
       this.hayError = true;
+      //this.paises = [];//Si dá error pinto un arreglo con paises vacios
     });
   }
-
   
-
 }

@@ -24,9 +24,9 @@ export class PorPaisComponent{
   constructor(private paisService: PaisService) { }//Aca inyectamos nuesto servicio, para poder consumirlo
 
   /**Implementamos el método de buscar */
-  buscar(){
+  buscar(termino: string){
     this.hayError = false;
-    console.log(this.termino);
+    this.termino=termino;
 
     //hay que recordar que para que un observable se dispare, hay que tener almenos un subscribe
     this.paisService.buscarPais(this.termino).subscribe(paises => {//En este caso del observable, esta seria la parte del next

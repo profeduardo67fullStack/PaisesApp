@@ -3,7 +3,11 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-pais-input (onEnter)="buscar ( $event )"></app-pais-input><!--Como aca es donde se va a emitir, se tiene que escuchar el evento onEnter-->
+        <app-pais-input 
+            (onEnter)="buscar ( $event )"
+            (onDebounce)="sugerencias($event)"
+        >
+        </app-pais-input><!--Como aca es donde se va a emitir, se tiene que escuchar el evento onEnter-->
     </div>
 </div>
 

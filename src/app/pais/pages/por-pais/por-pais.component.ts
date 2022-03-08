@@ -39,5 +39,10 @@ export class PorPaisComponent{
       this.paises = [];//Si dá error pinto un arreglo con paises vacios
     });
   }
+
+  sugerencias(termino: string){
+      this.hayError=false;
+      //TODO: Crear Sugerencias
+  }
   
 }
